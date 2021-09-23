@@ -15,6 +15,17 @@ public class Tictoe {
         createBoard(scan,board);
         playerComputer();
         showBoard(board);
+        if (isSpaceFree(char[]board,int index))
+        {
+            System.out.println("Select the index from 1 to 9.");
+            int n=scan.nextInt();
+            System.out.println(n);
+        }
+        else
+        {
+            System.out.println("Space is full.");
+        }
+        
     }
 
     public static void createBoard(Scanner scan, char[] board)
@@ -50,6 +61,10 @@ public class Tictoe {
         System.out.println(board[1] + "|" + board[2] + "|" + board[3]
                 + "\n" + board[4] + "|" + board[5] + "|" + board[6]
                 + "\n" + board[7] + "|" + board[8] + "|" + board[9]);
+    }
+    public static boolean isSpaceFree(char[]board, int index)
+    {
+        return board[index]=' ';
     }
 
 }
